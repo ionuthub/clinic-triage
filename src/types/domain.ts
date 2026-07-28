@@ -1,6 +1,6 @@
-export type ReferralType = 'routine' | 'urgent' | 'followUp' | 'safeguarding';
-export type PriorityBand = 'red' | 'amber' | 'green';
-export type ReferralStatus = 'incoming' | 'accepted' | 'booked' | 'declined';
+export type ReferralType = "routine" | "urgent" | "followUp" | "safeguarding";
+export type PriorityBand = "red" | "amber" | "green";
+export type ReferralStatus = "incoming" | "accepted" | "booked" | "declined";
 
 export interface Patient {
   id: string;
@@ -74,7 +74,7 @@ export interface AuditEntry {
   action: string;
   referralId?: string;
   detail: string;
-  severity: 'info' | 'warning' | 'critical';
+  severity: "info" | "warning" | "critical";
 }
 
 export interface EligibilityResult {

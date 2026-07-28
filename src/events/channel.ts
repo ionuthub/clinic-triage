@@ -1,4 +1,4 @@
-import type { ClinicEvents, EventName } from './types';
+import type { ClinicEvents, EventName } from "./types";
 
 type Listener<K extends EventName> = (payload: ClinicEvents[K]) => void;
 
