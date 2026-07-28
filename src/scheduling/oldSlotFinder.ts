@@ -17,6 +17,8 @@ export const findContinuitySlots: SlotFinder = ({
         Number(a.id === preferredClinicianId),
     )
     .flatMap((clinician) =>
-      clinician.slots.filter((slot) => !slot.bookedReferralId),
+      clinician.slots.filter(
+        (slot) => !slot.bookedReferralId && slot.service === referral.service,
+      ),
     )
     .sort((a, b) => compareAsc(new Date(a.startsAt), new Date(b.startsAt)));

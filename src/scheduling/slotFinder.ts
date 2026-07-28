@@ -7,6 +7,7 @@ export const findSlots: SlotFinder = ({ referral, clinicians }) =>
         clinician.active && clinician.services.includes(referral.service),
     )
     .flatMap((clinician) => clinician.slots)
+    .filter((slot) => slot.service === referral.service)
     .filter(
       (slot) =>
         !slot.bookedReferralId && isAfter(new Date(slot.startsAt), new Date()),
